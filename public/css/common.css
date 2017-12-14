@@ -1,0 +1,79 @@
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding:0;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline:none;
+}
+
+header {
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+header > div {
+    padding: 0.5em 1em;
+}
+
+header > div > img {
+    /*max-width:80%;*/
+
+}
+
+header > div.menu > * {
+    vertical-align: bottom;
+    padding-top: 0.2em;
+}
+
+header > div.menu > img {
+    width: 20px;
+    padding-bottom: 0.2em;
+}
+
+header > .back {
+
+}
+
+header > .back > img {
+    width: 20px;
+
+}
+
+.ui.steps {
+    display: -webkit-inline-box;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    margin: 0;
+}
+
+.ui.steps .step:after {
+    display: block !important;
+
+}
+
+.ui.active.step, .ui.steps .step.active {
+    cursor: auto;
+    background-color: #555;
+    color: #FFF;
+    font-weight: 700;
+}
+
+.ui.active.steps:after, .ui.steps .step.active:after {
+    background-color: #555;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.ui.steps .active.step:last-child:after, .ui.steps .step:last-child:after {
+    display: none !important;
+}
+
+footer {
+
+    color: #999;
+    font-size: 14px;
+    padding: 0.5em;
+    text-align: right;
+}

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%- include('../modules/link') %>
+    <link rel="stylesheet" href="/css/Timexz.css">
+</head>
+
+<style>
+    @media screen and (max-width: 767px) {
+        .row {
+            margin: 0;
+        }
+
+        .ui.large.menu {
+            margin: 0;
+        }
+
+        .right.menu {
+            /*width:*/
+        }
+
+        .ui.items {
+            margin: 0;
+        }
+
+        .ui.items > .item {
+            padding: 0.5em;
+        }
+
+        .ui.items:not(.unstackable) > .item {
+            margin: 0;
+        }
+
+        .media1 {
+            display: flex;
+            justify-content: space-between;
+            padding:0.5em;
+        }
+
+        .media1 .media-left1 {
+            width:30%;
+        }
+
+        .media1 .media-left1 img {
+            max-width:100%;
+        }
+
+        .media1 .media-middle1 {
+            width:45%;
+            font-size:12px;
+            padding-left: 0.5em;
+            color: #999;
+        }
+
+        .media1 .media-middle1 p {
+            margin-top: 0.2em;
+        }
+
+        .media1 .media-middle1 h4 {
+            color: #000;
+        }
+
+        .media1 .media-middle1 .grade {
+            font-size: 18px;
+            color: #FF8C6B;
+        }
+
+        .media1 .media-right1 {
+            width:25%;
+            font-size:25px;
+            align-self: center;
+            color: #FF8c6B;
+        }
+    }
+
+</style>
+
+<body>
+
+<!--step-->
+<div class="ui four steps">
+    <div class="ui active step">
+        选择
+    </div>
+    <div class="ui disabled step">
+        预览
+    </div>
+    <div class="ui disabled step">
+        全景
+    </div>
+    <div class="ui disabled step">
+        完成
+    </div>
+</div>
+
+<%- include('../header') %>
+
+
+
+
+<!--选择日期-->
+<div class="ui large menu">
+    <!--筛选-->
+    <!-- 入住时间选择 -->
+    <div class="row select-time">
+        <span class="time entertime"></span>
+        <input type="text" class="input-enter none">
+        <span>入住</span>
+        <span class="c-back">一</span>
+        <span class="time leavetime"></span>
+        <input type="text" class="input-leave none">
+        <span>离店</span>
+        <span class="night">共1晚</span>
+    </div>
+    <!--<a class="active item">-->
+    <!--<i class="home icon"></i> 主页-->
+    <!--</a>-->
+    <!--<a class="item">-->
+    <!--<i class="mail icon"></i> 消息-->
+    <!--</a>-->
+    <div class="right menu">
+        <div class="item">
+            <div class="ui icon input">
+                <input type="text" placeholder="搜索中...">
+                <!--<i class="search link icon"></i>-->
+            </div>
+        </div>
+        <!--<div class="ui dropdown item">-->
+        <!--语言 <i class="dropdown icon"></i>-->
+        <!--<div class="menu">-->
+        <!--<a class="item">英文</a>-->
+        <!--<a class="item">中文</a>-->
+        <!--<a class="item">日文</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+        <!--<div class="ui teal button">注册</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<div class="media-container">
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel1.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安黄埔大酒店</h4>
+            <p>
+                <span class="grade">4.2分</span>
+                <span class="">322条点评</span>
+            </p>
+            <p>
+                <span class="">舒适型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥322</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel.png" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安万达嘉华酒店</h4>
+            <p>
+                <span class="grade">4.5分</span>
+                <span class="">518条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥756</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel3.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>格林豪泰酒店</h4>
+            <p>
+                <span class="grade">4.8分</span>
+                <span class="">856条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥867</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel1.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安黄埔大酒店</h4>
+            <p>
+                <span class="grade">4.2分</span>
+                <span class="">322条点评</span>
+            </p>
+            <p>
+                <span class="">舒适型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥322</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel.png" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安万达嘉华酒店</h4>
+            <p>
+                <span class="grade">4.5分</span>
+                <span class="">518条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥756</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel3.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>格林豪泰酒店</h4>
+            <p>
+                <span class="grade">4.8分</span>
+                <span class="">856条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥867</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel1.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安黄埔大酒店</h4>
+            <p>
+                <span class="grade">4.2分</span>
+                <span class="">322条点评</span>
+            </p>
+            <p>
+                <span class="">舒适型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥322</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel.png" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安万达嘉华酒店</h4>
+            <p>
+                <span class="grade">4.5分</span>
+                <span class="">518条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥756</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel3.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>格林豪泰酒店</h4>
+            <p>
+                <span class="grade">4.8分</span>
+                <span class="">856条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥867</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel1.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安黄埔大酒店</h4>
+            <p>
+                <span class="grade">4.2分</span>
+                <span class="">322条点评</span>
+            </p>
+            <p>
+                <span class="">舒适型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥322</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel.png" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>西安万达嘉华酒店</h4>
+            <p>
+                <span class="grade">4.5分</span>
+                <span class="">518条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥756</span>
+        </div>
+    </div>
+    <div class="media1">
+        <div class="media-left1">
+            <img data-src="images/hotel3.jpg" alt="">
+        </div>
+        <div class="media-middle1">
+            <h4>格林豪泰酒店</h4>
+            <p>
+                <span class="grade">4.8分</span>
+                <span class="">856条点评</span>
+            </p>
+            <p>
+                <span class="">豪华型</span>
+            </p>
+            <p>
+                <span class="">碑林区南门外南关正街</span>
+            </p>
+        </div>
+
+        <div class="media-right1">
+            <span>￥867</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include('../footer') %>
+
+</body>
+<%- include('../modules/script') %>
+<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+<script src="/js/date.js"></script>
+<script>
+
+    $(function () {
+
+        //懒加载
+        function getTop(e) {
+            var T = e.offsetTop;
+            while(e = e.offsetParent) {
+                T += e.offsetParent;
+            }
+            return T;
+        }
+        function lazyLoad(imgs) {
+            var H = window.innerHeight;
+            var S = document.documentElement.scrollTop || document.body.scrollTop;
+            for(var i = 0;i < imgs.length;i++){
+                if(H + S  > getTop(imgs[i])) {
+                    imgs[i].src = imgs[i].getAttribute('data-src');
+                }
+            }
+        }
+
+        var imgs = document.querySelectorAll('.media1 img');
+
+        window.onscroll = function () {
+            lazyLoad(imgs);
+        }
+
+        lazyLoad(imgs);
+
+        $('.select-time').hotelDate();
+
+        $('.media1').click(function () {
+            location.href = '/view'
+        })
+
+
+
+    })
+
+
+</script>
+</html>

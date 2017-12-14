@@ -1,0 +1,79 @@
+<link rel="stylesheet" type="text/css" href="css/cityPicker.css">
+<style>
+    #cityChoice {
+        margin: 0;
+        /*opacity: 0;*/
+        width: 70px;
+        margin-left: 0px;
+        outline: none;
+        border:red;
+        background: #eee;
+    }
+
+    #cityName {
+        /*margin-left: -40px;*/
+        font-size: 16px;
+    }
+
+    #IIInsomnia_city_picker {
+        /*display: block;*/
+        /*position: static;*/
+        left: 0 !important;
+        width: 320px;
+    }
+
+    #IIInsomnia_city_picker > div.line {
+        width: 315px;
+    }
+
+    .IIInsomnia-city-picker:before {
+        display: none;
+    }
+</style>
+
+<header>
+    <div class="menu">
+        <!--<span id="cityName">西安 </span><img src="images/dropdown.png" alt="下拉">-->
+        <input type="text" id="cityChoice" readonly="readonly" value="西安▼">
+        <input type="hidden" id="province" value="">
+        <input type="hidden" id="city" value="">
+    </div>
+    <div class="title">
+
+    </div>
+    <div class="back">
+        <img src="images/return.png" alt="">
+    </div>
+</header>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/cityData.js"></script>
+<script type="text/javascript" src="js/cityPicker.js"></script>
+<script>
+    var cityPicker = new IIInsomniaCityPicker({
+        data: cityData,
+        target: '#cityChoice',
+        valType: 'k-v',
+        hideCityInput: '#city',
+        hideProvinceInput: '#province',
+        callback: function (city_id) {
+//            alert(city_id);
+        }
+    });
+
+    cityPicker.init();
+
+//    var cityChoice = document.querySelector('#cityChoice');
+//
+//    cityChoice.removeAttribute('readonly');
+
+    console.log(cityChoice);
+
+//    cityChoice.onblur = function () {
+//        alert(1);
+//    }
+    $('#cityChoice').change(function () {
+        var cityName = $('#province')[0].value;
+        console.log(cityName);
+        $('#cityName').text(cityName);
+    })
+</script>

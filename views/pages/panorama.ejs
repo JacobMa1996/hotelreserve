@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%- include('../modules/link') %>
+
+</head>
+
+<style>
+
+    h5 {
+
+        margin: 1em;
+        padding-top: 1em;
+        text-align: center;
+    }
+
+    #container {
+        margin: 0.5em;
+        height: 500px;
+        width: 96%;
+    }
+
+</style>
+
+<body>
+<h5>
+    全景浏览
+</h5>
+<div id="container">
+
+</div>
+
+<!--<button id="move">move</button>-->
+
+<!--<div id="text">1</div>-->
+
+<%- include('../footer') %>
+
+</body>
+<%- include('../modules/script') %>
+<script src="/js/three.min.js"></script>
+<script src="/js/photo-sphere-viewer.min.js"></script>
+<script>
+    window.onload = function () {
+
+        var div = document.querySelector('#container');
+
+        var PSV = new PhotoSphereViewer({
+            panorama: 'images/hotel4.jpg',//全景图的路径
+            container: div,//放置全景图的容器
+            autoload: true,//是否自动加载
+            usexmpdata: true,//如果全景图必须读入XMP则为true
+//        default_position:,//定义默认位置
+//        min_fov:,//默认值为30，观察的最小区域，单位degrees，在1-179之间
+//        max_fov:,//默认值为90，观察的最大区域，单位degrees，在1-179之间
+//        allow_user_interactions:,//默认值为true，设置为false则禁止用户和全景图交互（导航条不可用）
+//        tilt_up_max:,//默认值为Math.PI/2，向上倾斜的最大角度，单位radians
+//        tilt_down_max:,//默认值为Math.PI/2，向下倾斜的最大角度，单位radians
+//        zoom_level:,//默认的缩放,0-100
+//        long_offset:,//可选，默认值为PI/360，mouse/touch移动时每像素经过的经度值。
+//        lat_offset:,//可选，默认值为PI/180，mouse/touch移动时每像素经过的纬度值。
+            time_anim: false,//可选，默认值为2000，全景图在time_anim毫秒后会自动进行动画。（设置为false禁用它）
+//        theta_offset:,//过时的选项，可选，默认值为1440，自动动画时水平方向的速度。
+//        anim_speed:,//可选，默认值为2rpm，动画的速度，每秒/分钟多少radians/degrees/revolutions。
+            navbar: true,//可选值，默认为false。显示导航条。
+//        navbar_style:,//可选值，默认为{}。导航条的自定义样式。下面是可用的样式列表:,//
+//        backgroundColor:,//导航条的背景颜色，默认值为rgba(61, 61, 61, 0.5)。
+//        buttonsColor:,//按钮的前景颜色，默认值为transparent。
+//        activeButtonsBackgroundColor:,//按钮激活状态的背景颜色，默认值为rgba(255, 255, 255, 0.1)。
+//        buttonsHeight:,//按钮的高度，单位像素，默认值为20。
+//        autorotateThickness:,//autorotate图标的厚度，单位像素，默认值为1。
+//        zoomRangeWidth:,//缩放的范围，单位显示，默认值50。
+//        zoomRangeThickness:,//缩放的范围的厚度，单位像素，默认值1。
+//        zoomRangeDisk:,//缩放范围的圆盘直径，单位像素，默认值为7。
+//        fullscreenRatio:,//全屏图标的比例，默认值为3/4。
+//        fullscreenThickness:,//全屏图标的厚度，单位像素，默认值为2。
+            loading_msg: '',//可选，默认值为Loading…，图片加载时的提示文字。
+//        loading_img:,//可选，默认值为null，在加载时显示的图片的路径。
+//        size:,//可选，默认值null，全景图容器的最终尺寸。例如:,//{width: 500, height: 300}。
+//        onready:,//可选值，默认值为null。当全景图准备就绪并且第一张图片显示时的回调函数。
+        })
+
+
+        console.log(PSV.getPosition());
+
+        console.dir(PSV);
+
+        document.querySelector('#move').onclick = function () {
+            var position = PSV.getPosition();
+            PSV = null;
+            //加载新的图片
+            PSV = new PhotoSphereViewer({
+                panorama: 'images/hotel2.jpg',
+                container: div,
+                default_position: {
+                    long: position.longitude,
+                    lat: position.latitude
+                },
+                time_anim: false
+            })
+
+        }
+
+        //滑屏事件
+        document.addEventListener('touchmove', function () {
+            var position = PSV.getPosition();
+            console.log('position:' + position.longitude + ',' + position.latitude);
+        })
+    }
+
+</script>
+</html>

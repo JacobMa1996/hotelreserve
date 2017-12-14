@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%- include('../modules/link') %>
+
+</head>
+
+<style>
+
+    @media screen and (max-width: 767px) {
+        .ui.items > .item, .ui.items > .row > .item {
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+            border-bottom: .2em solid rgba(0, 0, 0, .2);
+            border-radius: .33em;
+            -webkit-transition: -webkit-box-shadow .2s ease;
+            -moz-transition: box-shadow .2s ease;
+            transition: box-shadow .2s ease;
+            padding: .5em;
+        }
+
+        .ui.items > .item > .content > .description {
+            color: #999;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .ui.items > .item > .content span.blue {
+            color: #00B7FF;
+        }
+
+        .ui.items > .item > .content span.grade {
+            color: #FF8c6B;
+            font-size: 18px;
+        }
+
+        .ui.items > .item > .content span.green {
+            color: #1fc231;
+        }
+
+        .ui.items > .item > .content span.orange {
+            color: #FF8C6b;
+        }
+
+        .btn {
+            float: right;
+            margin-right: 1em;
+        }
+
+        .ui.items > .item .extra > button {
+            margin: 0;
+        }
+        #reserve {
+            margin-top: -0.8em;
+        }
+    }
+
+</style>
+
+<body>
+
+<!--step-->
+<div class="ui four steps">
+    <div id="back" class="ui disabled step">
+        选择
+    </div>
+    <div class="ui active step">
+        预览
+    </div>
+    <div class="ui disabled step">
+        确认
+    </div>
+    <div class="ui disabled step">
+        完成
+    </div>
+</div>
+
+<div class="ui stackable items">
+    <div class="item">
+        <div class="image">
+            <img src="/images/hotel.png">
+            <a class="like ui corner label">
+                <i class="like icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <div class="name">西安万达嘉华酒店</div>
+            <p class="description">
+                <span class="grade">4.6分</span> 518人点评 <span class="green">豪华型</span>
+                <button id="panorama" class="btn btn-primary">全景预览</button>
+                <br>
+                <span class="blue">距离市中心 11.6公里 碑林南山区</span>
+                <br>
+                <span class="green">商务出行 亲自时刻</span> <span class="blue">可返</span>
+                <br>
+                <button id="reserve" class="btn btn-info">马上预定</button>
+                <span class="orange">服务好 最新预定：半小时前 </span>
+
+            </p>
+            <div class="extra">
+                199 喜欢
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../footer') %>
+
+</body>
+<%- include('../modules/script') %>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="./js/date.js"></script>
+<script>
+$(function () {
+    $('#panorama').click(function () {
+        location.href = '/panorama';
+    })
+})
+
+</script>
+</html>
