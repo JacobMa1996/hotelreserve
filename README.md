@@ -34,3 +34,5 @@ Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框�
 具体页面请根据route路由进行访问。
 
 全景预览地址为http://localhost:3000/panorama。
+
+开发同学请切换到dev分支。
