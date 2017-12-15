@@ -48,7 +48,7 @@
             var div = document.querySelector('#container');
 
             var PSV = new PhotoSphereViewer({
-                panorama: 'images/1.jpg',//全景图的路径
+                panorama: 'images/6.jpg',//全景图的路径
                 container: div,//放置全景图的容器
                 autoload: true,//是否自动加载
                 usexmpdata: true,//如果全景图必须读入XMP则为true
@@ -87,12 +87,12 @@
 
             // console.dir(PSV);
 
-            var index = 1;//定义图片index
+            var index = 6;//定义图片index
             document.querySelector('#next').onclick = function () {
 
                 index++;
-                if (index == 5) {
-                    index = 1;
+                if (index == 10) {
+                    index = 6;
                 }
                 console.log(index);
                 getNextImg(index);
@@ -103,8 +103,8 @@
             document.querySelector('#pre').onclick = function () {
 
                 index--;
-                if (index == 0) {
-                    index = 4;
+                if (index == 6) {
+                    index = 10;
                 }
                 console.log(index);
                 getNextImg(index);
